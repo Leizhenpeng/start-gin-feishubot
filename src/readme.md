@@ -14,7 +14,10 @@
 
 <description>
 
-> ***快速利用gin去搭建一个feishu机器人***
+> ***快速利用gin去搭建一个feishu机器人:实现基本的计算器功能***
+
+![img.png](../doc/img.png)
+
 
 </description>
 
