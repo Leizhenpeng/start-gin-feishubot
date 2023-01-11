@@ -1,4 +1,4 @@
-# start-gin 帮助文档
+# start-feishubot 帮助文档
 
 <p align="center" class="flex justify-center">
     <a href="https://www.serverless-devs.com" class="ml-1">
@@ -38,7 +38,7 @@
 
 # 代码 & 预览
 
-- [:smiley_cat: 源代码](https://github.com/Leizhenpeng/start-gin-feishubot)
+- [源代码](https://github.com/Leizhenpeng/start-gin-feishubot)
 
         
 
