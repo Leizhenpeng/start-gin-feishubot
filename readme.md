@@ -2,22 +2,22 @@
 
 <p align="center" class="flex justify-center">
     <a href="https://www.serverless-devs.com" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-gin&type=packageType">
+    <img src="http://editor.devsapp.cn/icon?package=start-feishubot&type=packageType">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-gin" class="ml-1">
+  <a href="http://www.devsapp.cn/details.html?name=start-feishubot" class="ml-1">
     <img src="http://editor.devsapp.cn/icon?package=start-gin&type=packageVersion">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-gin" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-gin&type=packageDownload">
+  <a href="http://www.devsapp.cn/details.html?name=start-feishubot" class="ml-1">
+    <img src="http://editor.devsapp.cn/icon?package=start-feishubot&type=packageDownload">
   </a>
 </p>
 
 <description>
 
-> ***快速利用gin去搭建一个feishu机器人***
+> ***快速基于gin搭建一个feishu机器人:实现基本的计算器功能***
 
 
-![img.png](./doc/img.png)
+![img.png](https://gh.api.99988866.xyz/https://github.com/Leizhenpeng/start-gin-feishubot/blob/master/doc/img.png)
 
 
 </description>
@@ -50,15 +50,16 @@
 
 <appcenter>
 
-- :fire: 通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-gin) ，
+- :fire: 通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-feishubot) ，
 [![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-gin-feishubot)  该应用。 
 
 </appcenter>
 
 - 通过 [Serverless Devs Cli](https://www.serverless-devs.com/serverless-devs/install) 进行部署：
     - [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://www.serverless-devs.com/fc/config) ；
-    - 初始化项目：`s init start-gin -d start-gin`   
-    - 进入项目，并进行项目部署：`cd start-gin && s deploy -y`
+    - 初始化项目：`s init start-feishubot -d feishubot`   
+    - 进入项目，修改[飞书机器人配置](https://open.feishu.cn/app?lang=zh-CN) `cd feishubot && vim feishu_config.yaml`
+    - 项目部署发布：`s deploy -y`
 
 </deploy>
 

@@ -3,7 +3,7 @@ Name: start-feishubot
 Provider:
   - 阿里云
 Version: 1.0.7
-Description: 快速基于gin搭建feishu机器人
+Description: 快速利用gin去搭建一个feishu机器人:实现基本的计算器功能
 HomePage: https://github.com/Leizhenpeng/start-gin-feishubot
 Tags:
   - Gin
