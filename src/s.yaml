@@ -5,6 +5,7 @@ access: "{{ access }}" #  秘钥别名
 vars: # 全局变量
   region: "{{ region }}"
 
+
 services:
   helloworld:
     component: fc
@@ -24,17 +25,17 @@ services:
         description: "Serverless Devs Website Service"
       function:
         name: "{{ functionName }}"
-        description: 'hello world by serverless devs'
+        description: 'a simple feishubot by serverless devs'
         codeUri: './code'
         cAPort: 9000
         customRuntimeConfig:
           command:
             - ./target/main
-        environmentVariables: {}
+        environmentVariables: { }
         handler: index.handler
         instanceConcurrency: 20
         instanceType: e1
-        memorySize: 512
+        memorySize: 128
         runtime: custom
         timeout: 30
         internetAccess: true

@@ -1,13 +1,14 @@
 Type: Application
-Name: start-gin-feishubot
+Name: start-feishubot
 Provider:
   - 阿里云
 Version: 1.0.7
-Description: 快速利用gin去搭建一个feishu机器人
+Description: 快速基于gin搭建feishu机器人
 HomePage: https://github.com/Leizhenpeng/start-gin-feishubot
 Tags:
   - Gin
   - feishu
+  - 飞书机器人
   - Golang
   - Web 框架
 Category: 云应用

@@ -4,9 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"leizhenpeng/start-gin-feishubot/calc"
-	"os"
 	"regexp"
+	"start-feishubot/calc"
+
+	"github.com/spf13/viper"
 
 	"github.com/gin-gonic/gin"
 
@@ -20,10 +21,11 @@ import (
 )
 
 func setEnv() {
-	os.Setenv("APP_ID", "cli_a33d032e57f8900b")
-	os.Setenv("APP_SECRET", "6Q5x6mH5SIkBDVfDoJo3VpvZh2UNUIAE")
-	os.Setenv("APP_ENCRYPT_KEY", "7TrmmuThNgWptZAYXOR1icnGpAcRkzel")
-	os.Setenv("APP_VERIFICATION_TOKEN", "HZxvn808oCnuh4bMPHLrTdNPAy5BhBxM")
+	viper.SetConfigFile("./feishu_config.yaml")
+	err := viper.ReadInConfig()
+	if err != nil {
+		panic(fmt.Errorf("Fatal error config file: %s \n", err))
+	}
 }
 
 var client *lark.Client
@@ -74,10 +76,12 @@ func parseContent(content string) string {
 	return msgFilter(text)
 }
 func main() {
-	client = lark.NewClient(os.Getenv("APP_ID"), os.Getenv("APP_SECRET"))
+	client = lark.NewClient(viper.GetString("APP_ID"),
+		viper.GetString("APP_SECRET"))
 
 	//// 注册消息处理器
-	handler := dispatcher.NewEventDispatcher(os.Getenv("APP_VERIFICATION_TOKEN"), os.Getenv("APP_ENCRYPT_KEY")).
+	handler := dispatcher.NewEventDispatcher(viper.GetString(
+		"APP_VERIFICATION_TOKEN"), viper.GetString("APP_ENCRYPT_KEY")).
 		OnP2MessageReceiveV1(func(ctx context.Context, event *larkim.P2MessageReceiveV1) error {
 			fmt.Println(larkcore.Prettify(event))
 			content := event.Event.Message.Content
@@ -103,18 +107,5 @@ func main() {
 	fmt.Println("http server started", "http://localhost:8080/webhook/event")
 
 	r.Run(":9000")
-
-	//
-	//
-	//// 注册 http 路由
-	//http.HandleFunc("/webhook/event", httpserverext.NewEventHandlerFunc(handler, larkevent.WithLogLevel(larkcore.LogLevelDebug)))
-	//
-	//// 启动 http 服务
-	//
-	//
-	//err2 := http.ListenAndServe(":8080", nil)
-	//if err2 != nil {
-	//	panic(err2)
-	//}
 
 }
